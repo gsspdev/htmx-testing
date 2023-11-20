@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #35424a;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #ffffff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">My</span> Portfolio</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="home">
+            <h1>Welcome to My Portfolio</h1>
+            <p>This is a simple portfolio website using HTMX and HTML.</p>
+        </section>
+
+        <section id="about">
+            <h1>About Me</h1>
+            <p>Information about yourself goes here.</p>
+        </section>
+
+        <section id="projects">
+            <h1>Projects</h1>
+            <!-- Example of HTMX: load projects on demand -->
+            <button hx-get="projects.html" hx-trigger="click" hx-target="#project-list">Load Projects</button>
+            <div id="project-list">
+                <!-- Projects will load here -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>Contact form or information goes here.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>My Portfolio, &copy; 2023</p>
+    </footer>
+</body>
+</html>
+
